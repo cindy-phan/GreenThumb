@@ -17,7 +17,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity {
+public class LearnMore extends AppCompatActivity {
 
     String API_KEY = "8190df9eb51445228e397e4185311a66"; // ### YOUE NEWS API HERE ###
     String NEWS_SOURCE = "bbc-news";
@@ -90,13 +90,13 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Unexpected error", Toast.LENGTH_SHORT).show();
                 }
 
-                ListNewsAdapter adapter = new ListNewsAdapter(MainActivity.this, dataList);
+                ListNewsAdapter adapter = new ListNewsAdapter(LearnMore.this, dataList);
                 listNews.setAdapter(adapter);
 
                 listNews.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     public void onItemClick(AdapterView<?> parent, View view,
                                             int position, long id) {
-                        Intent i = new Intent(MainActivity.this, LearnMoreDetailsActivity.class);
+                        Intent i = new Intent(LearnMore.this, LearnMoreDetailsActivity.class);
                         i.putExtra("url", dataList.get(+position).get(KEY_URL));
                         startActivity(i);
                     }
