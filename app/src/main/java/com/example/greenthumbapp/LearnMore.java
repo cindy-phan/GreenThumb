@@ -90,7 +90,7 @@ public class LearnMore extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Unexpected error", Toast.LENGTH_SHORT).show();
                 }
 
-                ListNewsAdapter adapter = new ListNewsAdapter(LearnMore.this, dataList);
+                ListArticleAdapter adapter = new ListArticleAdapter(LearnMore.this, dataList);
                 listNews.setAdapter(adapter);
 
                 listNews.setOnItemClickListener(new AdapterView.OnItemClickListener() {
