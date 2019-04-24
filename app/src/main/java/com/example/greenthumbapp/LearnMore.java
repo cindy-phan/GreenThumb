@@ -19,8 +19,8 @@ import java.util.HashMap;
 
 public class LearnMore extends AppCompatActivity {
 
-    String API_KEY = "8190df9eb51445228e397e4185311a66"; // ### YOUE NEWS API HERE ###
-    String NEWS_SOURCE = "bbc-news";
+    String API_KEY = "b1da5642a72e4cc4b9edc6e0a66eee0c";
+    String CATEGORY = "home-gardening";
     ListView listNews;
     ProgressBar loader;
 
@@ -34,7 +34,7 @@ public class LearnMore extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_learn_more);
 
         listNews = (ListView) findViewById(R.id.listNews);
         loader = (ProgressBar) findViewById(R.id.loader);
@@ -63,7 +63,7 @@ public class LearnMore extends AppCompatActivity {
             String xml = "";
 
             String urlParameters = "";
-            xml = LearnMoreFunction.excuteGet("https://newsapi.org/v1/articles?source="+NEWS_SOURCE+"&sortBy=top&apiKey="+API_KEY, urlParameters);
+            xml = LearnMoreFunction.excuteGet("https://newsapi.org/v2/everything?q="+CATEGORY+"&sortBy=top&apiKey="+API_KEY, urlParameters);
             return  xml;
         }
         @Override
